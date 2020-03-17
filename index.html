@@ -1,0 +1,335 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Tatted | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/tatted_logo_2.png" width="190" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Who's Tattoos?</a>
+        </li>
+	   <li>
+          <a href="#gal">Tattoos & Stories</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Word On The Street</a>
+        </li>
+        <li>
+          <a href="#vid">Dad vs. Tattoos</a>
+			</li>
+      <li>
+          <a href="#num">Tattoos Around The World</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<img src="img/animation.gif" alt="Animation">
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Who's tattoos?</h2>
+<article>
+<p class="tab">Everyone has a story. Some share their stories through words, some share their stories through actions, and some share their stories by inking them on their skin to cherish for the rest of their lives.<br><br>Explore the diversity and creativity around tattoos amongst locals and college students in San Luis Obispo.</p>
+<p class="tab"><a href="#gal">Students and Tattoos</a></p>
+</article>
+</div>
+
+        <!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax_2.jpg">
+</div>
+<!--end of parallax image-->
+    
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Photo Gallery</h2>
+<article><!--beginning of article-->
+<p class="tab">A collection of Cal Poly students displaying their tattoos and the stories behind them.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/Amittai.jpg" width="100%" height="100%" alt="Cal Poly junior and English major, Amittai Zamora, poses against the wall of her college home to show us her first tattoo. Date: 2/6/2020"/>
+<img src="img/Amittai_2.jpg" width="100%" height="100%" alt="“Shenron is a wish-granting dragon from Dragon Ball. Me and all my brothers grew up watching it and we all still love it to this day, so I figured if Shenron's got my back, all my wishes would be granted. I have 5 tattoos at the moment and still want a lot more. I like decorating my body, that’s kinda it. I’m a simple woman. I like the way they look and I like having little reminders of the things I love.” Date: 2/6/2020"/>
+<img src="img/Cal_1.jpg" width="100%" height="100%" alt="Cal Poly junior and Business major, Callahan Rohner, stands in the front yard of his house he has lived in for the past two years posing with a scrub he uses on his grill (cooking is one of his favorite hobbies). Date: 2/5/2020"/>
+<img src="img/Cal_2.jpg" width="100%" height="100%" alt="“This tattoo is placed over my heart and represents my father’s birthday. He passed away from pancreatic cancer when I was 18 years old, so it serves as a reminder of how great of a father he was every day. It also allows me to talk to others about him which, in a way, keeps his memory alive for anyone who didn’t get the chance to meet him.” Date: 2/5/2020"/>
+<img src="img/Mika_1.jpg" width="100%" height="100%" alt="Cal Poly junior and Journalism major, Mika Lincoln, stands with her back to us to show off her two favorite tattoos out of the four that she has. Date: 2/10/2020"/>
+<img src="img/Mika_2.jpg" width="100%" height="100%" alt="“I got my first tattoo on my wrist when I turned 18. My parents said if I ever got a tattoo they would disown me, so I have four. I didn’t know what I wanted as my first tattoo so I just went for it. I hid it from my parents for three years successfully until my Mom finally confronted me, but by then I had three tattoos. The wave on my arm is my newest one. I just got it when I ran away to Spain for Thanksgiving. I spent 3 hours laughing, crying, and talking in this tattoo shop with the coolest man ever, I still keep in touch with Boris (the tattoo artist) and can’t wait to go back and get tattooed by him again. People now ask me about my “White Claw Wave tattoo” and I’ve gotten free drinks from flashing it in bars. I’m trying to limit myself to one tattoo a year so I don’t get out of control... but we’ll see how long that lasts.” Date: 2/10/2020"/>
+<img src="img/Kyle_1.jpg" width="100%" height="100%" alt="Cal Poly junior and Business major, Kyle Hegarty, lounges on his backyard stairs, enjoying some California winter weather– a nice change from the Philadelphia winters he grew up with. Date: 2/6/2020"/>
+<img src="img/Kyle_2.jpg" width="100%" height="100%" alt="“I wanted to get a tattoo but I wasn’t sure on the design. My friend had an appointment for a tattoo and was told I should tag along and get one too. The design was based off a Patagonia logo I saw and I modified it and added the skeleton and changed the surfboard. I wanted to get a tattoo because it’s permanent and I thought the idea of adding something permanent that wasn’t originally there would be cool.” Date: 2/6/2020"/>
+<img src="img/Sophia_1.jpg" width="100%" height="100%" alt="Cal Poly junior and Recreation, Parks and Tourism Administration major, Sophia Tomeo, enjoys some afternoon sun in her backyard on a Wednesday afternoon before her last class of the day. Date: 2/5/2020"/>
+<img src="img/Sophia_2.jpg" width="100%" height="100%" alt="“I’ve really always wanted tattoos since I was a little girl, so when I turned 18, I started my tattoo journey. This tattoo has a lot of personal meaning to me, as my best friend was a tattoo apprentice at the time and had designed the flowers specifically for me. I put a lot of trust in him at the time and it came out to be something that I know I’ll cherish on my body forever.” Date: 2/5/2020"/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Student Opinions</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+        <!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax_3.jpg">
+</div>
+<!--end of parallax image-->
+    
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Word on the Street</h2>
+<article>
+  <p class="tab">Click on images to hear ...<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/sienna_audio.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/freddy_audio.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/anna_audio.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/sienna.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/sienna.jpg'" onMouseOut="this.src='img/rollover/sienna.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/freddy.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/freddy.jpg'" onMouseOut="this.src='img/rollover/freddy.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/anna.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/anna.jpg'" onMouseOut="this.src='img/rollover/anna.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Non-student perspectives</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax_1.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">dad vs. tattoos</h2>
+<article>
+<p class="tab">A juxtaposition of interviews with a tattoo artist and my dad edited side by side to display different opinions on tattoos.</p>	
+<video width="100%" height="100%" poster="img/clickbait.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Tattoos around the world</a></p>
+</article>
+</div>
+<!--end of video section-->
+    
+    <!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax_4.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">Infographic</h2>
+<article>
+<p class="tab">
+    A few graphs displaying data on tattoos around the world.
+    </p>
+<!--infographic embed code here-->
+   <div class="infogram-embed" data-id="732c71ba-8553-4b20-89ee-95e0cf435695" data-type="interactive" data-title="Tats"></div><script>!function(e,i,n,s){var t="InfogramEmbeds",d=e.getElementsByTagName("script")[0];if(window[t]&&window[t].initialized)window[t].process&&window[t].process();else if(!e.getElementById(n)){var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",d.parentNode.insertBefore(o,d)}}(document,0,"infogram-async");</script>
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Tatted | San Luis Obispo, CA | <a href="mailto: lilydallow28@gmail.com?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2020 | Site by Lily Dallow 
+</footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+    
+    
+
+</html>
