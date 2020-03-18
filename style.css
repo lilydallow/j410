@@ -9,7 +9,7 @@
 
 body {
 	color: black; /*(default font color for the entire page)*/
-	font-family: 'Carrois_Gothic/CarroisGothic-Regular', sans-serif;
+	font-family: 'Carrois Gothic', sans-serif;
     color: #807f89;
 	font-weight: 300; /*(font thickness)*/
 }
@@ -109,7 +109,7 @@ a.text:hover, a.text:active {
 }
 .row p a{
 	color: #1e1f32;
-    font-family: "londrinasolid-thin", cursive;
+    font-family: 'londrinasolid-thin', cursive;
     text-transform: uppercase;
     padding: .5rem 1rem;
     padding-right: 2rem;
@@ -441,7 +441,7 @@ footer a:hover {
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
-  font-family: 'Carrois_Gothic/CarroisGothic-Regular', sans-serif;
+  font-family: 'Carrois Gothic', sans-serif;
   font-size: 11px; /* Increase font size */
 }
 
