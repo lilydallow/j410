@@ -68,9 +68,10 @@ nav ul li a:visited {
     padding: 0 20px;
     line-height: 105px;
     background-color: #B1CFBC;
-    color: #F6ECE8;
+    color: #807f89;
     text-decoration: none;
 	font-weight: bold;
+    opacity: 1 !important;
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
@@ -140,7 +141,7 @@ a.text:hover, a.text:active {
 }
 
 .TattoosAroundTheWorld{
-    padding-bottom: 1.8rem !important;
+    padding-right: 2.7rem !important;
 }
 
 /*----------------media queries-----------------*/
@@ -157,7 +158,7 @@ a.text:hover, a.text:active {
   .nav-mobile {
     display: block;
       background-color: white;
-      opacity: 0.75;
+      opacity: 0.70;
   }
   nav {
     width: 100%;
@@ -353,7 +354,14 @@ filter: alpha(opacity=70)
 /*----------------VIDEO-----------------*/
 video {
     position: relative;
-    width: 100%;    
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/*----------------MAP-----------------*/
+#map {
+   position: relative;
+   width: 100%;
 }
 
 /*----------------FOOTER-----------------*/
