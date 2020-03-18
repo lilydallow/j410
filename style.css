@@ -107,7 +107,7 @@ a.text:hover, a.text:active {
     background-color: white;
     color: black;
 }
-.row a{
+.row p a{
 	color: #1e1f32;
     font-family: "londrinasolid-thin";
     text-transform: uppercase;
@@ -362,6 +362,7 @@ video {
 #map {
    position: relative;
    width: 100%;
+    
 }
 
 /*----------------FOOTER-----------------*/
