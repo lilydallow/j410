@@ -305,7 +305,6 @@ p {
   width: 100%;
   z-index: 1;
   position: relative;
-  background-image: url(img/texture_2.png);
 }
 
 /* prev / next links */
