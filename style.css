@@ -109,7 +109,7 @@ a.text:hover, a.text:active {
 }
 .row p a{
 	color: #1e1f32;
-    font-family: 'LondrinaSolid-Thin', cursive;
+    font-family: 'LondrinaSolid-Thin', sans-serif;
     text-transform: uppercase;
     padding: .5rem 1rem;
     padding-right: 2rem;
@@ -281,7 +281,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'LondrinaSolid-Regular', cursive;
+	font-family: 'LondrinaSolid-Regular', sans-serif;
     text-align: center;
     font-size: 55px;
     text-transform: uppercase;
